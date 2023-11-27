@@ -1,5 +1,11 @@
-import 'package:shopping_api/shopping_api.dart' as shopping_api;
+import 'model.dart';
+import 'network_service.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${shopping_api.calculate()}!');
+Future<void> main(List<String> arguments) async {
+
+  String data = await NetworkniUla.dataniOl(NetworkniUla.apiPro);
+  shoppingDataFromJson(data).forEach((element) {
+    print(element.type.count?[0]);
+  });
+
 }
